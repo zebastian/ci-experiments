@@ -1,0 +1,22 @@
+# Travis Build Konfiguration
+# https://docs.travis-ci.com/user/customizing-the-build/
+
+language: c
+
+os:
+  - linux
+  - osx
+
+env:
+  matrix:
+    - CONFIG=release
+
+script:
+  - mkdir build
+  - cd build
+  - cmake ..
+  - make -j3
+
+notifications:
+  email:
+    - sebastian.jennen@gmx.de
