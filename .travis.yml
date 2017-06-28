@@ -1,23 +1,37 @@
 # Travis Build Konfiguration
 # https://docs.travis-ci.com/user/customizing-the-build/
 
+# Dies spezifiziert die zu verwendende Linux VM
+# In diesem Fall Ubuntu 14.04 LTS (Trusty Tahr)
 dist: trusty
+
+# Angabe der Programmiersprache
 language: c
 
+# Angabe der Betriebssysteme
+# Dies weist travis an einen Build auf Linux
+# und einen Build auf OSX auszuführen
 os:
   - linux
   - osx
 
+# Die Software soll nur in Release Modus kompiliert werden
+# An dieser Stelle könnten auch debug Builds generiert werden
 env:
   matrix:
     - CONFIG=release
 
+# Ausführen des builds, die einzelnen Schritte sind:
+# Erzeugung und Wechseln in ein Build Verzeichnis
+# cmake Projekt Konfigurierung und Kompilierung des Projekts
 script:
   - mkdir build
   - cd build
   - cmake ..
-  - make -j3
+	- make
 
+# Hinweise bezüglich Erfolg und Fehlschlag der Kompilierung
+# werden an diese Empfänger per Mail versendet
 notifications:
   email:
     - sebastian.jennen@gmx.de

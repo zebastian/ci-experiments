@@ -1,0 +1,20 @@
+# AppVeyor Build Konfiguration
+# https://www.appveyor.com/docs/build-configuration/
+
+before_build:
+- mkdir build
+
+build_script:
+	- cd build
+	- cmake ..
+	- nmake
+
+after_build:
+	- cd ..
+	- 7z a %buildname%_%name%.zip build
+
+matrix:
+	fast_finish: true
+
+artifacts:
+- path: '*.zip'
