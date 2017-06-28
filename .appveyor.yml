@@ -2,7 +2,7 @@
 # https://www.appveyor.com/docs/build-configuration/
 
 before_build:
-- mkdir build
+	- mkdir build
 
 build_script:
 	- cd build
@@ -17,4 +17,4 @@ matrix:
 	fast_finish: true
 
 artifacts:
-- path: '*.zip'
+	- path: '*.zip'
