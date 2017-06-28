@@ -1,13 +1,18 @@
 # AppVeyor Build Konfiguration
 # https://www.appveyor.com/docs/build-configuration/
 
+#### Define each build for the extension
+environment:
+  matrix:
+    - image: Visual Studio 2017
+
 before_build:
   - mkdir build
 
 build_script:
   - cd build
   - cmake ..
-  - nmake
+  - msvc
 
 after_build:
   - cd ..
