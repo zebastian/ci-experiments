@@ -30,13 +30,12 @@ include_directories(src)
 # Add source files to the build target.
 add_executable(dummy ${SOURCE_FILES})
 
-# Generate proper GUI program on specified platform.
-# Check if we are using the Visual Studio compiler on windows.
-IF(WIN32 AND MSVC AND NOT USING_INTEL)
+# mark win32 application as a console application
+IF(WIN32 AND MSVC)
 	add_definitions(-D_CRT_SECURE_NO_WARNINGS=1)
 	set_target_properties(${PROJECT_NAME} PROPERTIES
 		WIN32_EXECUTABLE YES
-		LINK_FLAGS "/SUBSYSTEM:WINDOWS"
+		LINK_FLAGS "/SUBSYSTEM:CONSOLE"
 	)
 ENDIF()
 
