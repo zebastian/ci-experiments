@@ -20,7 +20,7 @@ build_script:
 # Packe den build Ordner in ein ZIP Archiv
 after_build:
   - cd ..
-  - 7z a %buildname%_%name%.zip build
+  - 7z a dummy.zip build
 
 # Bei Fehler sofort beenden
 matrix:
@@ -35,4 +35,4 @@ artifacts:
 notifications:
   - provider: Email
     to:
-      - sebastian.jennen@gmx.des
+      - sebastian.jennen@gmx.de
