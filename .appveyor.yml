@@ -1,25 +1,38 @@
 # AppVeyor Build Konfiguration
 # https://www.appveyor.com/docs/build-configuration/
 
-#### Define each build for the extension
+# Setze den Compiler aus MSVC 2017
 environment:
   matrix:
     - image: Visual Studio 2017
 
+# Erzeuge einen Build Ordner
 before_build:
   - mkdir build
 
+# Kompiliere das Projekt mit MSVC
 build_script:
   - cd build
   - cmake ..
-  - msbuild *.sln
+  - tree
+  - msbuild dummy.sln
 
+# Packe den build Ordner in ein ZIP Archiv
 after_build:
   - cd ..
   - 7z a %buildname%_%name%.zip build
 
+# Bei Fehler sofort beenden
 matrix:
   fast_finish: true
 
+# Lade folgende Artefakte auf AppVeyor hoch
 artifacts:
   - path: '*.zip'
+
+# Hinweise bezüglich Erfolg und Fehlschlag der Kompilierung
+# werden an diese Empfänger per Mail versendet
+notifications:
+  - provider: Email
+    to:
+      - sebastian.jennen@gmx.des
