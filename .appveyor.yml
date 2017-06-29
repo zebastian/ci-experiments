@@ -12,7 +12,7 @@ before_build:
 build_script:
   - cd build
   - cmake ..
-  - msbuild
+  - msbuild *.sln
 
 after_build:
   - cd ..
