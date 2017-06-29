@@ -28,7 +28,17 @@ script:
   - mkdir build
   - cd build
   - cmake ..
-	- make
+  - make
+
+# Kompilierte Binaries sollen automatisch
+# auf Github hochgeladen werden
+deploy:
+  provider: releases
+  api_key: "TODO"
+  file: "dummy"
+  skip_cleanup: true
+  on:
+    tags: true
 
 # Hinweise bezüglich Erfolg und Fehlschlag der Kompilierung
 # werden an diese Empfänger per Mail versendet
