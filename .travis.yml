@@ -34,13 +34,13 @@ script:
 # auf Github hochgeladen werden
 # Das secure API Token wurde vom travis CLI generiert
 deploy:
-	provider: releases
-	api_key:
-		secure: H4Vz/1NOGMDH4m1F2xSJpveYoV/cGOMWQGlR0zsoCnCJkOHQhlm7h8XFgaGhpNJ+PwC6upKCBtlPRfMyQM4QXOEso7SCfw7cx32hjuiMoLQgIpKXlFI/u9k3tEOTHJ5BxkR6DvNBLmLteKMYIk+HHa0fj8LwJ6N6ViVK30mcoWsh+5iQcDDkNkgUFAyU12q4OSrGACY3R+lUst6/PGbo9OJ+/KC/b0q5rNK4Q0COK8pOI+onV/45niz57+cSVpLekY1+MkZzZzdhq94HTgpAWFFFh5zmgIxnyVFH1nM1GfuX4gY5jZc5FQS0FWJuH8sXJNfH+7dRDB4hkIqeJoKm3wccmuOCrH7oQUJP1XXpsuL79FuYbyhl1MgOsh+WrSClLqzqxd65mXGKDqDL3OHWj/DMqEvdw6UOj7UNq4xfMDV9Bf2bmuIKcca5PsuY1JpZ0XCmG4tlKuayq/qmMxzNhEzdpj87LPiBJX9BOCdh7ogHNr1Wd8cr+Wu7Li0Z14X6VEAVA/h+IrUak/RdeH1c4r90SkXprgYGmF30KnbZawX1UVqMToNfhKAVwRhFNrluraIABCtV3hGdGw27fK/0uMycyElpvFy33kKfEAc9t5pLK2OcVgiArs4kq9rtQSFiTBWXiBX3cnZYUxKU2qCP1QbKXe6yKxOO9Ld8KXBo+SI=
-	file: dummy
-	on:
-		repo: zebastian/ci-experiments
-		branch: development
+  provider: releases
+  api_key:
+    secure: H4Vz/1NOGMDH4m1F2xSJpveYoV/cGOMWQGlR0zsoCnCJkOHQhlm7h8XFgaGhpNJ+PwC6upKCBtlPRfMyQM4QXOEso7SCfw7cx32hjuiMoLQgIpKXlFI/u9k3tEOTHJ5BxkR6DvNBLmLteKMYIk+HHa0fj8LwJ6N6ViVK30mcoWsh+5iQcDDkNkgUFAyU12q4OSrGACY3R+lUst6/PGbo9OJ+/KC/b0q5rNK4Q0COK8pOI+onV/45niz57+cSVpLekY1+MkZzZzdhq94HTgpAWFFFh5zmgIxnyVFH1nM1GfuX4gY5jZc5FQS0FWJuH8sXJNfH+7dRDB4hkIqeJoKm3wccmuOCrH7oQUJP1XXpsuL79FuYbyhl1MgOsh+WrSClLqzqxd65mXGKDqDL3OHWj/DMqEvdw6UOj7UNq4xfMDV9Bf2bmuIKcca5PsuY1JpZ0XCmG4tlKuayq/qmMxzNhEzdpj87LPiBJX9BOCdh7ogHNr1Wd8cr+Wu7Li0Z14X6VEAVA/h+IrUak/RdeH1c4r90SkXprgYGmF30KnbZawX1UVqMToNfhKAVwRhFNrluraIABCtV3hGdGw27fK/0uMycyElpvFy33kKfEAc9t5pLK2OcVgiArs4kq9rtQSFiTBWXiBX3cnZYUxKU2qCP1QbKXe6yKxOO9Ld8KXBo+SI=
+  file: build/dummy
+  on:
+    repo: zebastian/ci-experiments
+    branch: development
 
 # Hinweise bezüglich Erfolg und Fehlschlag der Kompilierung
 # werden an diese Empfänger per Mail versendet
